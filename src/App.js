@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    val: null
+      init: 0,
+      val: null
     };
   }
   handleClick = buttonName => {
@@ -21,7 +22,7 @@ class App extends Component {
       render() {
         return (
           <div className="component-app">
-            <Display value={this.state.total || '0'} />
+            <Display val={this.state.val || this.state.init} />
             <ButtonPanel clickHandler={this.handleClick} />
           </div>
         );
